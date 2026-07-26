@@ -1,0 +1,13 @@
+[Unit]
+Description=Enhance per-website usage dashboard
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/enhance-usage/dashboard
+ExecStart=/usr/bin/php -S 0.0.0.0:8181 -t /opt/enhance-usage/dashboard
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
